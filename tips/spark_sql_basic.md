@@ -77,3 +77,9 @@ END
 A [wildcard](https://www.w3schools.com/sql/sql_wildcards.asp) character is used to substitute one or more characters in a string.
 
 Wildcard characters are used with the `LIKE` operator. The `LIKE` operator is used in a `WHERE` clause to search for a specified pattern in a column.
+
+### `BETWEEN` Operator
+```sql
+WHERE FIELD BETWEEN VALUE1 AND VALUE2
+```
+Usually used in date selection when you want to select an interval of date.
