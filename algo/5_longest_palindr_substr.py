@@ -1,5 +1,5 @@
 # dp practice: Identify longest palindrome within strings. For example, ‘abcdedc’ has the palindrome ‘cdedc’
-
+from time import time
 from typing import List
 
 # brute force: time O(n^3) there're (n choose 2) binomial substr and takes O(n) to verify each
@@ -27,33 +27,55 @@ def ispalin(s: str) -> bool:
     return True
     
 
+###############################################
 import numpy as np
 # dynamic programming: O(n^2) time and O(n^2) table space
 def dp(s: str) -> str:
-    # tabulation method first create a table
     n = len(s)
-    p = np.zeros((n, n), dtype=bool)
+    # tabulation bottom-up method first create a table (harder than memorization approach but faster)
+    # p[i, j] = True if s[i: j+1] is a sub-palindrome
+    p = np.zeros((n, n), dtype=int)
     longest_palin = ''
 
-    # init base case
-    for i in range(n):
-        p[i, i] = True
-        if (i + 1) < n:
-            p[i, i+1] = s[i] == s[i+1]
-
     # dynamic programming
-    # bug: need to figure out the order when populate the table
-    for i in range(n):
-        for j in range(n):
-            if i > j or i:
-                continue
-            p[i, j] = p[i+1, j-1] and s[i] == s[j]
-            if p[i, j] and (j-i+1) > len(longest_palin):
-                longest_palin = s[i: j+1]
+    # * important to figure out the correct order when populate the table
+    for j in range(n):
+        for i in range(j, -1, -1):
+            if i == j: # base case
+                p[i, j] = True
+            elif j == (i + 1) and (i + 1) < n: # base case
+                p[i, i+1] = s[i] == s[i+1]
+            else: # state transition
+                p[i, j] = p[i+1, j-1] and s[i] == s[j]
 
-    print(p)
+            # update the longest palin (slower)
+            # if p[i, j] and (j-i+1) > len(longest_palin):
+            #     longest_palin = s[i: j+1]
+
+     # get the longest palin directly faster (search the largest idx difference in the table)
+    found = False
+    for col in range(n, -1, -1):
+        row = 0
+        while row < n and col < n:
+            if p[row, col]:
+                longest_palin = s[row: col+1]
+                found = True
+                break
+            row += 1
+            col += 1
+            
+        if found: break
+
+    # print('dp table:\n', p)
     return longest_palin
 
+###############################################
+#  dp memorization approach (top-down recursive): slower then tabulation
+def dp_2(s: str) -> str:
+    pass
+
+
+###############################################
 # expansion method: O(n^2) time and O(1) space
 def sol_expand(s: str) -> str:
     # expand at every mid points and update the longest sub-palindrome
@@ -90,9 +112,14 @@ def sol_expand(s: str) -> str:
 
 def main():
     s = 'abcdefedc'
+    s2 = "plyvmcthyommabcqtmqklpfkopccabybkneifgjdqhexoezlykccgpfidcqizmotounzpslphlpwghbubwthhpivqvwmvuirfhfnkjzpxyccwnuqodbdmsxybztgzvtonheaxcrpukdpgapfczulexugxghuzuvwqvgckpsgjqyzywlxtzmkqmzgavdmchnyaqzidzjfbizxgikjbsmhyikjvgveeifntxpmpgaoqbzwxyfsnexidvxdxxzzzykphrzprlzoyqqlbxbbgmyzplgqnzphbbdxitexvvjzhtpgkfpfazqiqeyczhkkooykaotkqwuuehbgfyznwjqutbltsamcmzyhzrdvvdrzhyzmcmastlbtuqjwnzyfgbheuuwqktoakyookkhzcyeqiqzafpfkgpthzjvvxetixdbbhpznqglpzymgbbxblqqyozlrpzrhpkyzzzxxdxvdixensfyxwzbqoagpmpxtnfieevgvjkiyhmsbjkigxzibfjzdizqaynhcmdvagzmqkmztxlwyzyqjgspkcgvqwvuzuhgxguxeluzcfpagpdkuprcxaehnotvzgtzbyxsmdbdoqunwccyxpzjknfhfriuvmwvqviphhtwbubhgwplhplspznuotomziqcdifpgcckylzeoxehqdjgfienkbybaccpokfplkqmtqcbammoyhtcmvylp"
     print(bf(s))
     print(sol_expand(s))
-    print(dp(s))
+    
+    start = time()
+    print(dp(s2))
+    end = time()
+    print(f'dp time: {end - start:.4f}')
 
 if __name__ == '__main__':
     main()
