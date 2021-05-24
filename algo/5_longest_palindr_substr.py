@@ -35,7 +35,6 @@ def dp(s: str) -> str:
     # tabulation bottom-up method first create a table (harder than memorization approach but faster)
     # p[i, j] = True if s[i: j+1] is a sub-palindrome
     p = np.zeros((n, n), dtype=int)
-    longest_palin = ''
 
     # dynamic programming
     # * important to figure out the correct order when populate the table
@@ -70,9 +69,20 @@ def dp(s: str) -> str:
     return longest_palin
 
 ###############################################
-#  dp memorization approach (top-down recursive): slower then tabulation
+#  dp memorization approach (top-down recursive): slower than tabulation
 def dp_2(s: str) -> str:
+    # p = np.zeros((n, n), dtype=int)
     pass
+
+def p_helper(i, j, p, s) -> int:
+    # base + recursion
+    # if i == j:
+    #     p[i, i] = True
+    
+    # if (i+1) == j and (i+1) < len(s):
+    #     p[i, i+1] = True
+    pass
+    
 
 
 ###############################################

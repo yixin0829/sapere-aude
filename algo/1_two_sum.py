@@ -30,7 +30,7 @@ def two_sum_tp(nums: List[int], target: int) -> List[int]:
     l = 0
     r = len(nums) - 1
 
-    # 2nd pass (two ptr)
+    # 2nd pass (two ptr) - O(logn)
     while l < r:
         s = nums[l] + nums[r]
         if s == target:

@@ -4,8 +4,11 @@ Contains technical programming questions.
 
 ## Array & String
 * [1_two_sum (hash, 2-ptr)](./1_two_sum.py)
+* [167_two_sum_II (2-ptr on sorted)](./167_two_sum_II)
+* [15_3sum](./15_3sum)
 * [189_rotate_array](./189_rotate_array.py)
 * [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
+* [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
 
 ### Two-pointer Technique
 Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
@@ -26,3 +29,4 @@ Check out a beginner refresher in [this article](https://medium.com/swlh/two-poi
 ## Sorting
 
 ## DP
+* [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
