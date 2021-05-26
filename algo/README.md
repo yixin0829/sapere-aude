@@ -4,16 +4,15 @@ Contains technical programming questions.
 
 ## Array & String
 * [1_two_sum (hash, 2-ptr)](./1_two_sum.py)
-* [167_two_sum_II (2-ptr on sorted)](./167_two_sum_II)
-* [15_3sum](./15_3sum)
+* [167_two_sum_II (2-ptr on sorted)](./167_two_sum_II.py)
+* [15_3sum](./15_3sum.py)
 * [189_rotate_array](./189_rotate_array.py)
 * [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
-* [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
+* [5_longest_palindr_substr (dp)](./5_longest_palindr_substr.py)
+* [11_container_with_water (2-ptr)](./11_container_with_water.py)
+* [16_3sum_closest (2-ptr)](./16_3sum_closest.py)
+* [259_3sum_small (bs)](./259_3sum_small.py)
 
-### Two-pointer Technique
-Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
-
-* [11_container_with_water (2-ptr)](./11_container_with_water)
 
 ## Linked List
 
@@ -24,7 +23,8 @@ Check out a beginner refresher in [this article](https://medium.com/swlh/two-poi
 ## Graph
 
 ## Searching
-* [35_srch_insert_pos](./35_srch_insert_pos.py) - binary search
+* [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
+* [259_3sum_small (bs)](./259_3sum_small.py)
 
 ## Sorting
 

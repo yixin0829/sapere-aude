@@ -57,5 +57,9 @@ def compare(s, t):
     return Counter(s) == Counter(t)
 ```
 
+### Two-pointer Technique
+Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
+
+
 ## pandas & NumPy Jam
 Get comfortable with data manipulation, stat programming etc.
