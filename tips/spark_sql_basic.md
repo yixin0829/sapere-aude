@@ -3,33 +3,35 @@ The official SQL Syntax doc by Apache Spark can be found in [HERE](https://spark
 
 ## Style Guide
 * `;` should be placed on a new line at the end of a query for clearity
-* `lower_case` for functions (e.g. `avg(col)`)
-* `lower_case` for aliasing (e.g. `FIELD1 AS a1`)
+* `UPPERCASE` for functions (e.g. `AVG(col)`)
+* `lower_case` for aliasing with underscore as delimiter (e.g. `FIELD1 AS a1`)
 * `UPPERCASE` for SQL keywords, clause (e.g. `SELECT`, `WHERE`, `CASE`, `JOIN`)
 * `UPPERCASE` for SQL logical operators (e.g. `IN`, `LIKE`, `AND`)
+* `UPPERCASE` for Hermes tables (e.g. CLSFD_ECG_HIT)
+* `lower_case` for custom {volatile, temporary} tables / {temporary} views names
 * Use `_` as delimiter (e.g. `DATABASE_1`, `fltr_seller`)
 
-* Name aggregation for east join later with aliasing
+* Name aggregation for easy join later with aliasing
 * Line breaks (good practice)
+* wrap with `()` and indent when creating views/temp tables
 ```sql
 -- for SELECT ', ' should be on a new line (easy commenting out)
-SELECT FIELD1
-    , FIELD2
-    ...
-
--- for joining
-...
-FROM TABLE1 a
-    LEFT JOIN TABLE2 b
-    ON ...
-    JOIN TABLE3 c
-    ON ...
-
--- for filtering
-...
-WHERE <CONDITION1>
-    AND <CONDITION2>
-    ...
+CREATE OR REPLACE TEMPORARY VIEW test AS (
+    SELECT FIELD1
+        , FIELD2
+        , CASE WHEN ... WHEN ... ELSE ... END AS cool_name
+        ...
+    -- for joining
+    FROM TABLE1 a
+        LEFT JOIN TABLE2 b
+        ON ...
+        JOIN TABLE3 c
+        ON ...
+    -- for filtering
+    WHERE <CONDITION1>
+        AND <CONDITION2>
+        ...
+);
 ```
 
 ## SQL Execution Precendence
