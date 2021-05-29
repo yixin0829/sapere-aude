@@ -57,7 +57,28 @@ def compare(s, t):
     return Counter(s) == Counter(t)
 ```
 
-### Two-pointer Technique
+### Init `inf`
+useful when try to init sth large to track the smallest value
+```python
+diff = float('inf')
+if new < diff:
+    diff = new
+```
+
+### `bisect` Module
+`bisect()`, `bisect_left()`, `bisect_right()` are useful to speed up binary search problem (one line code). `insort()` returns the list
+after it's inserted. see more details in [here](https://www.geeksforgeeks.org/bisect-algorithm-functions-in-python/)
+
+[code snippet to run](../snpts/bsct.py)
+```python
+def bs(nums: List[int], tar: int) -> int:
+    # return the left most index to insert
+    return bisect_lef(nums, tar)
+```
+
+
+## Techniques
+### Two-pointer
 Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
 
 

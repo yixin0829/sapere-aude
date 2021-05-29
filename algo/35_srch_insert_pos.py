@@ -1,4 +1,5 @@
 from typing import List
+from bisect import bisect_right, bisect_left, bisect
 
 # # binary insertion search on sorted list
 # * iterative approach: sorted. use binary search with O(log n) runtime complexity
@@ -46,6 +47,10 @@ def bs(nums, l, r, target) -> int:
         return bs(nums, l, mid - 1, target)
     else:
         return bs(nums, mid + 1, r, target)
+
+# * built-in bisect() approach (suprisingly slower)
+def bsct(nums:List[int], target: int) -> int:
+    return bisect_left(nums, target)
     
 def main():
     nums = [1,3,5,6]
@@ -53,10 +58,10 @@ def main():
     ans = [0, 1, 3, 2, 1, 4, 0]
 
     for i, t in enumerate(target):
-        if srch_insert_r(nums, t) == ans[i]:
+        if bsct(nums, t) == ans[i]:
             print(f'passed case{i}')
         else:
-            print((f'failed case{i}'))
+            print((f'failed case{i}. return{bsct(nums, t)} but expect {ans[i]}'))
 
 if __name__ == '__main__':
     main()
