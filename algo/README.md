@@ -1,6 +1,6 @@
 # Algorithms
 
-Contains technical programming questions.
+Contains technical programming questions. (use `pyst` usr snpt to bootstrap every technical problem)
 
 ## Array & String
 * [1_two_sum (hash, 2-ptr)](./1_two_sum.py)
@@ -10,6 +10,7 @@ Contains technical programming questions.
 * [16_3sum_closest (2-ptr & bs)](./16_3sum_closest.py)
 * [167_two_sum_II (2-ptr on sorted)](./167_two_sum_II.py)
 * [189_rotate_array](./189_rotate_array.py)
+* [259_3sum_small (2-ptr)](./259_3sum_small.py)
 
 
 ## Linked List
@@ -22,7 +23,6 @@ Contains technical programming questions.
 
 ## Searching
 * [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
-* [259_3sum_small (bs)](./259_3sum_small.py)
 
 ## Sorting
 

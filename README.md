@@ -1,6 +1,15 @@
 # sapere-aude
 An odyssey of math, stats, ds, and programming.
 
+## Portals
+* [Spark SQL basic](./tips/spark_sql_basic.md)
+* [Spark SQL tips](./tips/spark_sql_tips.md)
+* [Python basic](./tips/python_basic.md)
+* [Python tips](./tips/python_tips.md)
+* [Python data manipulation (numpy & pandas)](./tips/python_dm_basic.md)
+* [algo master portal](./algo/README.md)
+
+## Checklist
 - [ ] Python (technical)
     * get comfortable with pandas and numpy (e.g. how to choose all rows that contain a null value for any column, inter-quantile range from a list, etc...) and some easy questions on Leetcode on Lists, Strings, Matrix and Math.
 - [ ] Python (pd & np)

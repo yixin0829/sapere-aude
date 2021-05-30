@@ -57,15 +57,16 @@ def compare(s, t):
     return Counter(s) == Counter(t)
 ```
 
-### Init `inf`
-useful when try to init sth large to track the smallest value
+### Initialize `inf`
+useful when try to init sth large to track the smallest value as python int has arbitrary precision (note: numpy & pandas are different since
+they use C-style fixed-precision integers)
 ```python
 diff = float('inf')
 if new < diff:
     diff = new
 ```
 
-### `bisect` Module
+### `bisect` Module (for binary search)
 `bisect()`, `bisect_left()`, `bisect_right()` are useful to speed up binary search problem (one line code). `insort()` returns the list
 after it's inserted. see more details in [here](https://www.geeksforgeeks.org/bisect-algorithm-functions-in-python/)
 
@@ -74,6 +75,20 @@ after it's inserted. see more details in [here](https://www.geeksforgeeks.org/bi
 def bs(nums: List[int], tar: int) -> int:
     # return the left most index to insert
     return bisect_lef(nums, tar)
+```
+
+### Unique List/String & Filtering Dups
+Using `len()` and `set()`. Can also use the same trick to filter out duplicates in a list.
+```python
+# pythonic way (fastest)
+a = "hello"
+b = [1, 2, 3, 4, 5]
+len(set(a)) == len(a) # return False
+len(set(b)) == len(b) # return True
+
+# filtering duplicates
+l = [1, 1, 2]
+l = list(set(l)) # return [1, 2]
 ```
 
 
