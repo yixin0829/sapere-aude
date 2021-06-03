@@ -11,6 +11,8 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 * [167_two_sum_II (2-ptr on sorted)](./167_two_sum_II.py)
 * [189_rotate_array](./189_rotate_array.py)
 * [259_3sum_small (2-ptr)](./259_3sum_small.py)
+* [121_buy_and_sell_stock](./121_buy_and_sell_stock.py)
+* [122_buy_and_sell_stock_II](./122_buy_and_sell_stock_II.py)
 
 
 ## Linked List
