@@ -28,19 +28,36 @@ arr[:] = arr[n-k:] + arr[:n-k]
 ```
 
 ### Reverse Python String
-The easiest and fastest way is through slicing.
+The easiest way is through slicing. It creates a new copy for the storing the variables inside iterable. The format[a : b : c] in slicing states that from an inclusive to b exclusive, count in increments of c. In above code, a and b is blank and c is -1. So it iterates the entire list counting from the last element to the first element resulting in a reversed list.
 ```python
 s = "reverse me !"
+ls = [1, 2, 3, 4, 5] 
 s = s[::-1] # slicing reverse ("smily reverse")
+ls = ls[::-1] # return a new copy
 ```
+
+The **fastest** way to reverse is to user built-in function `reversed()` since it returns a `reverseiterator` object to allow you loop backwards without copying any variables.
+```python
+ls = [1, 2, 3, 4, 5]
+print(ls) # <list_reverseiterator object at 0x7fbd84e0b630>
+ls_iter = reversed(ls)
+for ele in ls_iter:
+    print(ele)
+```
+
 
 ### Looping Backward
 Note that `range()` function returns an immutable sequence type (i.e. `range` type) that excludes `stop` (similar to slicing).
 Example, loop through `range(5)` will give you `0 1 2 3 4` so `stop=-1` is crucial.
 ```python
+# method 1: use range() function
 s = 'hello'
 for i in range(len(s), -1, -1): # range(start, stop, step)
     print(s[i])
+
+# method 2: use reversed() function (preferred)
+for c in reversed(s):
+    print(c)
 ```
 
 ### Compare Two Unordered Lists
@@ -91,6 +108,21 @@ l = [1, 1, 2]
 l = list(set(l)) # return [1, 2]
 ```
 
+### Initializing 1D & 2D Array (Preferred Ways)
+See more details in this GeeksforGeeks [article](https://www.geeksforgeeks.org/python-which-is-faster-to-initialize-lists/).
+In general we prefer to use `*` operator when init 1D array and list comprehension when init 2D array since `*` will create a shallow list see this
+GeeksforGeeks [article](https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/) about 2D array in python
+```python
+# for 1D array [object] * num
+arr = [0] * 1000
+
+# for 2D array
+## Using * operator would create shallow lists
+arr = [[0]*no_of_cols]*no_of_rows
+
+## Using list comprehensions is better for 2d arrays
+arr = [[0 for i in range(no_of_cols)] for j in range(no_of_rows)]
+```
 
 ## Techniques
 ### Two-pointer
