@@ -65,4 +65,26 @@ df$col_to_drop <- NULL
 ```
 
 ### R `data.table`
+* a `data.table` object is also a `data.frame` (can use `class()` to check equivalent of `type()` in Python)
+* [Cheat sheet for R data.table](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf)
+* **General form:** `DT[i, j, by]`
+* Creating a `data.table`
+```r
+# easy conversion
+dt <- data.table(df)
+class(dt)
 
+# subsetting
+## subset column(s)
+df[, c2]
+df[, .(c2, c3)]
+df[, list(c2, c3)] # equiv to above
+
+# indexing and keys
+setkey(dt, c2)
+dt["a"]
+
+# doing j by group
+dt[1: 1000, .(sum(c4), sd(c5)), by=c1] # calculate sum and std dev of c4 & c5 group by c1 after subsetting the first 1000 rows
+
+```

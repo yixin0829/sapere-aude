@@ -52,12 +52,21 @@ Example, loop through `range(5)` will give you `0 1 2 3 4` so `stop=-1` is cruci
 ```python
 # method 1: use range() function
 s = 'hello'
-for i in range(len(s), -1, -1): # range(start, stop, step)
+for i in range(len(s), -1, -1): # range(start, stop, step) -1 is crucial
     print(s[i])
 
 # method 2: use reversed() function (preferred)
 for c in reversed(s):
     print(c)
+```
+
+### Looping with 2 Ptrs
+One increasing and the other decreasing. Can use built-in `zip()` function to [zip](https://docs.python.org/3/library/functions.html#zip) iterables together.
+```python
+# i count up and j count down
+left, right = 1, 5
+for i, j in zip(range(left, right), range(right, left, -1)):
+    print(f'i: {i} | j: {j} ')
 ```
 
 ### Compare Two Unordered Lists

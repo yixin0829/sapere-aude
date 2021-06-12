@@ -4,22 +4,39 @@ from copy import deepcopy
 
 
 def rotate_matrix(matrix):
-    """rotates a matrix 90 degrees clockwise"""
+    """rotates a matrix 90 degrees clockwise (in-place)"""
     # left to bottom 0,4 -> 4,4
     n = len(matrix[0])
-    if n % 2: # odd matrix layer 1, 3, 5, ...
-        layers = n // 2 + 1
-        l = 0
-        while l < layers:
-            # rotate a "hollow"  square
-            dim = 2 * l + 1
-            matrix[]
 
+    for layer in range(n // 2):
+        # define the frame
+        right = n-1 - layer
+        bottom = n-1 - layer
+        left, top = layer, layer
 
+        # i count up and j count down
+        for i, j in zip(range(left, right), range(right, left, -1)):
+            # right to bottom
+            temp, matrix[bottom][i] = matrix[bottom][i], matrix[j][right]
+            # bottom to left
+            temp, matrix[i][left] = matrix[i][left], temp
+            # left to top
+            temp, matrix[top][j] = matrix[top][j], temp
+            # top to right
+            matrix[j][right] = temp
+
+    return matrix
+    
 
 def rotate_matrix_pythonic(matrix):
-    """rotates a matrix 90 degrees clockwise"""
-    pass
+    """rotates a matrix 90 degrees clockwise (cheated not in-place)"""
+    n = len(matrix)
+    result = [[0] * n for i in range(n)]  # empty list of 0s
+    for i, j in zip(range(n), range(n - 1, -1, -1)):  # i counts up, j counts down
+        for k in range(n):
+            result[k][i] = matrix[j][k]
+
+    return result
 
 
 class Test(unittest.TestCase):
