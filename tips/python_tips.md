@@ -137,6 +137,8 @@ arr = [[0 for i in range(no_of_cols)] for j in range(no_of_rows)]
 ### Two-pointer
 Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
 
+### Runner (Linked List)
+
 
 ## pandas & NumPy Jam
 Get comfortable with data manipulation, stat programming etc.
