@@ -4,22 +4,26 @@ The official SQL Syntax doc by Apache Spark can be found in [HERE](https://spark
 ## Style Guide
 * `;` should be placed on a new line at the end of a query for clearity
 * `UPPERCASE` for functions (e.g. `AVG(col)`)
-* `lower_case` for aliasing with underscore as delimiter (e.g. `FIELD1 AS a1`)
+* `camelCase` for aliasing (e.g. `FIELD1 AS hpImpression`)
 * `UPPERCASE` for SQL keywords, clause (e.g. `SELECT`, `WHERE`, `CASE`, `JOIN`)
 * `UPPERCASE` for SQL logical operators (e.g. `IN`, `LIKE`, `AND`)
-* `UPPERCASE` for Hermes tables (e.g. CLSFD_ECG_HIT)
+* `lower_case` for Hermes tables (e.g. clsfd_ecg_hit)
 * `lower_case` for custom {volatile, temporary} tables / {temporary} views names
-* Use `_` as delimiter (e.g. `DATABASE_1`, `fltr_seller`)
+* Use `_` as delimiter (e.g. `clsfd_ecg_hit`, `fltr_seller`)
 
-* Name aggregation for easy join later with aliasing
-* Line breaks (good practice)
+* Always name aggregation for easy join later with aliasing
+* Line breaks (good practice) b/w group by fields and aggregated fields
 * wrap with `()` and indent when creating views/temp tables
 ```sql
 -- for SELECT ', ' should be on a new line (easy commenting out)
 CREATE OR REPLACE TEMPORARY VIEW test AS (
     SELECT FIELD1
         , FIELD2
-        , CASE WHEN ... WHEN ... ELSE ... END AS cool_name
+
+        , CASE WHEN ... THEN ...
+            WHEN ... THEN ...
+            ELSE ... END AS cool_name
+        , AVG(...) AS funColName
         ...
     -- for joining
     FROM TABLE1 a
@@ -31,6 +35,7 @@ CREATE OR REPLACE TEMPORARY VIEW test AS (
     WHERE <CONDITION1>
         AND <CONDITION2>
         ...
+    GROUP BY 1,2
 );
 ```
 
@@ -85,3 +90,7 @@ Wildcard characters are used with the `LIKE` operator. The `LIKE` operator is us
 WHERE FIELD BETWEEN VALUE1 AND VALUE2
 ```
 Usually used in date selection when you want to select an interval of date.
+
+### `coalesce` Function
+[coalesce](https://spark.apache.org/docs/latest/api/sql/index.html#coalesce) returns the first non-null argument if exists
+otherwise null. Useful to replace `NULL` with 0 in practice. `select coalesce(CTR, 0) from table1` if null then go for 0.

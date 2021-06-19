@@ -20,6 +20,7 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 ## Stack & Queue
 
 ## Tree & Graph
+* [104_max_depth_of_bt](./104_max_depth_of_bt.py)
 
 
 ## Searching
