@@ -14,6 +14,8 @@ np.random.uniform(low=0.0, high=1.0, size=None) # uniform distr
 `flatten()` creates a new copy while `.ravel()` creates a "view" and is memory efficient.
 
 ## pandas
+See more detailed **comparison with sql** in [here](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html).
+
 ### Joining
 * joining two tables with different column names with `pd.merge()`
 ```python
@@ -28,13 +30,22 @@ df_caller = df_caller.join(df_other.set_index(<keys>), on=<keys>, how={'left', '
 ```
 
 ### Column Manipulation
-* renaming columns `df.columns = ['col1', 'col2', 'col3']`
+* renaming columns
+    * `df.columns = ['col1', 'col2', 'col3']`
 * switching columns
 
 ### Filtering
 * dropping columns
-* dropping columns containing `NaN`
-* dropping rows containing `NaN` in a specific column(s)
+    * `df = df.drop(['col1', 'col2'], axis=1)`
+* dropping columns containing `NaN` with [DataFrame.dropna()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html)
+* dropping rows containing `NaN` in a specific column(s) -> see `DataFrame.dropna()`
 * SQL-like filtering for `Dataframe`
+    * `tips[(tips["time"] == "Dinner") & (tips["tip"] > 5.00)]` where `&` acts as `AND` in SQL
+    * NULL checking is done using `notna()` and `isna()` methods. `frame[frame["col1"].notna()]` is equivalent as below
+```sql
+SELECT *
+FROM frame
+WHERE col1 IS [NOT] NULL;
+```
 
 ### Selection

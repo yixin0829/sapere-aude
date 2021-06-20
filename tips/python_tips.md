@@ -103,7 +103,7 @@ def compare(s, t):
     return Counter(s) == Counter(t)
 ```
 
-### Initialize `inf`
+### Initialize `inf` (in Python)
 useful when try to init sth large to track the smallest value as python int has arbitrary precision (note: numpy & pandas are different since
 they use C-style fixed-precision integers)
 ```python
