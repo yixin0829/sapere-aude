@@ -9,6 +9,26 @@ returns a hash value that NEVER changes during their lifetime. See [Python gloss
 
 **Unhashable types:** `dict`, `List`, and `set`
 
+### Inner Functions
+Inner functions, also known as nested functions, are functions that you define inside other functions. It's useful for **backtracking** and in general any **recursion** problems. See more details in [here](https://realpython.com/inner-functions-what-are-they-good-for/)
+```python
+def factorial(number):
+    # Validate input
+    if not isinstance(number, int):
+        raise TypeError("Sorry. 'number' must be an integer.")
+    if number < 0:
+        raise ValueError("Sorry. 'number' must be zero or positive.")
+    # Calculate the factorial of number
+    def inner_factorial(number):
+        if number <= 1:
+            return 1
+        return number * inner_factorial(number - 1)
+    return inner_factorial(number)
+
+
+factorial(4)
+```
+
 
 ## Technical Tricks
 ### Swapping
@@ -134,7 +154,7 @@ arr = [[0 for i in range(no_of_cols)] for j in range(no_of_rows)]
 ```
 
 ## Techniques
-### Two-pointer
+### Two-pointer (Array)
 Check out a beginner refresher in [this article](https://medium.com/swlh/two-pointer-technique-solving-array-problems-at-light-speed-56a77ee83d16)
 
 ### Runner (Linked List)

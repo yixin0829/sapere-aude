@@ -8,6 +8,11 @@ np.random.normal(loc=0.0, scale=1.0, size=None) # normal distr with loc(mean) an
 np.random.uniform(low=0.0, high=1.0, size=None) # uniform distr
 ```
 
+### Reshaping and Flattening
+[Reshaping and flattening multidimensional arrays](https://numpy.org/devdocs/user/absolute_beginners.html#reshaping-and-flattening-multidimensional-arrays) with `.flatten()` and `.ravel()`.
+
+`flatten()` creates a new copy while `.ravel()` creates a "view" and is memory efficient.
+
 ## pandas
 ### Joining
 * joining two tables with different column names with `pd.merge()`

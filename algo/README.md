@@ -22,11 +22,9 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 ## Tree & Graph
 * [104_max_depth_of_bt](./104_max_depth_of_bt.py)
 
-
-## Searching
-* [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
-
-## Sorting
-
-## DP
+## Recusion & DP
 * [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
+* [22_generate_parentheses (backtracking)](./22_generate_parentheses.py)
+
+## Sorting & Searching
+* [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
