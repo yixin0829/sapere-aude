@@ -6,9 +6,9 @@ An odyssey of math, stats, ds, and programming.
 * [Spark SQL tips](./tips/spark_sql_tips.md)
 * [Python basic](./tips/python_basic.md)
 * [Python tips](./tips/python_tips.md)
-* [Python data manipulation (numpy & pandas)](./tips/python_dm_basic.md)
-* [algo master portal](./algo/README.md)
-* [DNA basic](./tips/dna_basic.md)
+* [Python DNA (numpy, pandas, & visualization)](./tips/python_dna_basic.md)
+* [R DNA basic (data table, ggplot2)](./tips/r_dna_basic.md)
+* [Algo master portal](./algo/README.md)
 
 ## Other Resr
 * [All DS cheat sheets repo](https://github.com/FavioVazquez/ds-cheatsheets)
