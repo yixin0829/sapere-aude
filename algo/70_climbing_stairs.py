@@ -44,9 +44,9 @@ def climb_dp_mem(n: int) -> int:
 
     return ans
         
-# official solution recursive dp with memorization
+# official solution recursive dp with memorization (pruning the recusion tress with the help from memo)
 def climb_dp_mem2(n: int) -> int:
-    mem = [0] * (n+1)
+    mem = [0] * (n+1) # preferred way to init 1d array in python
     def dp(n, current):
         if current == n:
             mem[current] = 1
@@ -67,8 +67,33 @@ def climb_dp_mem2(n: int) -> int:
 
 # non-recursive dp O(n) time and O(n) space
 def climb_dp_non_recur(n: int) -> int:
-    pass
+    if n < 1:
+        return 0
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 2
 
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    dp[2] = 2
+    for cur in range(3, n+1):
+        dp[cur] = dp[cur - 1] + dp[cur - 2]
+
+    return dp[n]
+
+# Fibonacci number: realize the prev dp problem is just a Fibonacci sequence
+# O(n) time and O(1) space
+def climb_fibonacci(n: int) -> int:
+    if n == 1: return 1
+
+    first = 1
+    second = 2
+    for i in range(3, n+1):
+        third = first + second
+        first = second
+        second = thrid
+    return second
 
 def main():
     # driver_code

@@ -28,7 +28,7 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 ## Recusion & DP
 * [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
 * [*22_generate_parentheses (backtracking)](./22_generate_parentheses.py)
-* [*70_climbing_stairs (easy dp)](./70_climbing_stairs.py)
+* [^70_climbing_stairs (easy dp)](./70_climbing_stairs.py)
 
 ## Sorting & Searching
 * [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
