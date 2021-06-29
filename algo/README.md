@@ -24,6 +24,8 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 
 ## Tree & Graph
 * [104_max_depth_of_bt](./104_max_depth_of_bt.py)
+* [94_binary_tree_inorder](./94_binary_tree_inorder.py)
+* [98_validate_bts](./98_validate_bts.py)
 
 ## Recusion & DP
 * [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
