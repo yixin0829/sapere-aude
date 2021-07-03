@@ -107,9 +107,16 @@ def compare(s, t):
 useful when try to init sth large to track the smallest value as python int has arbitrary precision (note: numpy & pandas are different since
 they use C-style fixed-precision integers)
 ```python
-diff = float('inf')
+# preferred
+inf = float('inf')
+neg_inf = float('-inf')
 if new < diff:
     diff = new
+
+# using math module
+import math
+inf = math.inf
+neg_inf = -math.inf
 ```
 
 ### `bisect` Module (for binary search)
