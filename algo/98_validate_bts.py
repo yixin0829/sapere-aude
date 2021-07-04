@@ -60,10 +60,11 @@ def validate(root: TreeNode) -> bool:
     
     return helper(root, -math.inf, math.inf)
 
-## same method as above but 89% faster
+## same method as above but 96% faster
 def validate(root: TreeNode) -> bool:
     result = True
     def helper(root, left, right):
+        nonlocal result #* important: basically telling python that result is not a local variable in inner function. without this declaration we cannot change `result` in the recursive calls
         if(root):
             if(left >= root.val or root.val >= right):
                 result = False
