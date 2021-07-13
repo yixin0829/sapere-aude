@@ -4,12 +4,12 @@ The official SQL Syntax doc by Apache Spark can be found in [HERE](https://spark
 ## Style Guide
 * `;` should be placed on a new line at the end of a query for clearity
 * `UPPERCASE` for functions (e.g. `AVG(col)`)
-* `camelCase` for aliasing (e.g. `FIELD1 AS hpImpression`)
+* `camelCase` for aliasing & column names (e.g. `FIELD1 AS hpImpression`)
 * `UPPERCASE` for SQL keywords, clause (e.g. `SELECT`, `WHERE`, `CASE`, `JOIN`)
 * `UPPERCASE` for SQL logical operators (e.g. `IN`, `LIKE`, `AND`)
 * `lower_case` for Hermes tables (e.g. clsfd_ecg_hit)
 * `lower_case` for custom {volatile, temporary} tables / {temporary} views names
-* Use `_` as delimiter (e.g. `clsfd_ecg_hit`, `fltr_seller`)
+* Use `_` as delimiter (e.g. `clsfd_ecg_hit`)
 
 * Always name aggregation for easy join later with aliasing
 * Line breaks (good practice) b/w group by fields and aggregated fields
@@ -22,7 +22,7 @@ CREATE OR REPLACE TEMPORARY VIEW test AS (
 
         , CASE WHEN ... THEN ...
             WHEN ... THEN ...
-            ELSE ... END AS cool_name
+            ELSE ... END AS coolName
         , AVG(...) AS funColName
         ...
     -- for joining

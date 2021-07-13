@@ -3,7 +3,8 @@
 Contains technical programming questions. (use `pyst` usr snpt to bootstrap every technical problem)
 
 `^`: fav problem  
-`*`: worth review and need more understanding
+`*`: worth review and need more understanding  
+`#`: unfinished
 
 ## Array & String
 * [1_two_sum (hash, 2-ptr)](./1_two_sum.py)
@@ -17,6 +18,9 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 * [121_buy_and_sell_stock](./121_buy_and_sell_stock.py)
 * [122_buy_and_sell_stock_II](./122_buy_and_sell_stock_II.py)
 * [*123_buy_and_sell_stock_III](./123_buy_and_sell_stock_III.py)
+* [^136_single_number](./136_single_number.py)
+* [#137_single_number_ii](./137_single_number_ii.py)
+* [#260_single_number_iii](./260_single_number_iii.py)
 
 ## Linked List
 
