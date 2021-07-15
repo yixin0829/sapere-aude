@@ -9,7 +9,10 @@ import numpy as np
 import pandas as pd
 
 
-def sol():
+## FAstest: math approach. O(n) time and O(n) space 3 * (a + b) - (a + a + b + a) = 2b -> 2b/ 2 = b
+def single_num_math(nums: List[int]) -> int:
+    no_dup = list(set(nums))
+    return ((sum(no_dup) * 3) - sum(nums)) // 2
     
 
 
