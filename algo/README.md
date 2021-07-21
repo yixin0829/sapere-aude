@@ -20,7 +20,8 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 * [*123_buy_and_sell_stock_III](./123_buy_and_sell_stock_III.py)
 * [^136_single_number (google)](./136_single_number.py)
 * [137_single_number_ii](./137_single_number_ii.py)
-* [#260_single_number_iii](./260_single_number_iii.py)
+* [260_single_number_iii](./260_single_number_iii.py)
+* [1848_minimum_distance_to_tar (two-ptr, 1d bfs)](./1848_minimum_distance_to_tar.py)
 
 ## Linked List
 
@@ -39,3 +40,6 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 
 ## Sorting & Searching
 * [35_srch_insert_pos (bs)](./35_srch_insert_pos.py)
+
+## Other
+* [#10_regex_matching](./10_regex_matching.py)
