@@ -31,6 +31,15 @@ factorial(4)
 
 
 ## Technical Tricks
+### Str to List of Chars
+```python
+s = "123"
+# approach1: list comprehension
+l = [c for c in s]
+# approach2: casting
+l = list(s)
+```
+
 ### Swapping
 ```python
 # python built-in method (without temp)

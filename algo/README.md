@@ -33,8 +33,9 @@ Contains technical programming questions. (use `pyst` usr snpt to bootstrap ever
 * [98_validate_bts (recursion)](./98_validate_bts.py)
 * [^101_symmetric_tree (recursion + *iterative)](./101_symmetric_tree.py)
 
-## Recusion & DP
+## Recursion & DP
 * [5_longest_palindr_substr (dp)](./5_longest_palindr_substr)
+* [17_letter_comb_phone_num (resursion)](./17_letter_comb_phone_num.py)
 * [*22_generate_parentheses (backtracking)](./22_generate_parentheses.py)
 * [^70_climbing_stairs (easy dp)](./70_climbing_stairs.py)
 
