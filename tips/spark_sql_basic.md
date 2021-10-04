@@ -7,7 +7,7 @@ The official SQL Syntax doc by Apache Spark can be found in [HERE](https://spark
 * `camelCase` for aliasing & column names (e.g. `FIELD1 AS hpImpression`)
 * `UPPERCASE` for SQL keywords, clause (e.g. `SELECT`, `WHERE`, `CASE`, `JOIN`)
 * `UPPERCASE` for SQL logical operators (e.g. `IN`, `LIKE`, `AND`)
-* `lower_case` for Hermes tables (e.g. clsfd_ecg_hit)
+* `lower_case` for data tables (e.g. google_clsfd_hit)
 * `lower_case` for custom {volatile, temporary} tables / {temporary} views names
 * Use `_` as delimiter (e.g. `clsfd_ecg_hit`)
 

@@ -48,7 +48,7 @@ arr[0][0] = 1 # will make 0 col all 1
 
 ### Lists
 
-An array-like data structure in python. Mutable unlike strinf is unmutable.
+An array-like data structure in python. Mutable unlike string is unmutable.
 
 __Simple Syntax__
 ```python

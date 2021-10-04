@@ -7,17 +7,20 @@ For now we focus on **R**.
 
 ## Data Structures & Data Types (R)
 * Types
-    * Numeric
+    * Numeric or integer
     * Character
     * Factor: takes the categorical variable and stores data in *levels* which takes less space
-    * Logical
+    * Logical (boolean)
     * Dates: just a special case of numeric
 * Structures
-    * Vectors
-    * Matrix
+    * Vectors `c(2,4,6)` or `c(2:6)`
+    * Matrix (2-d array)
     * Array
     * Data Frame
-    * List
+    * List - a collection of elements which can be different types
+        * e.g. `l <-list(x = 1:5, y = c('a', 'b'))`
+        * Access 2nd element of `l` by using double square bracket `l[[2]]` (return interger type)
+        * Single square bracket `l[2]` will return a new list with only the 2nd elelment
 
 ## Data Management
 * Importing data into R (e.g. RODBC, CSV)
@@ -65,10 +68,12 @@ df$col_to_drop <- NULL
 ```
 
 ### R `data.table`
+* [Intro article about data.table in R (quick refresher)](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)
 * a `data.table` object is also a `data.frame` (can use `class()` to check equivalent of `type()` in Python)
 * [Cheat sheet for R data.table](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/datatable_Cheat_Sheet_R.pdf)
 * **General form:** `DT[i, j, by]`
 * Creating a `data.table`
+
 ```r
 # easy conversion
 dt <- data.table(df)
@@ -88,3 +93,7 @@ dt["a"]
 dt[1: 1000, .(sum(c4), sd(c5)), by=c1] # calculate sum and std dev of c4 & c5 group by c1 after subsetting the first 1000 rows
 
 ```
+
+## Data Exploration
+
+

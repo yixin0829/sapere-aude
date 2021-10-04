@@ -1,5 +1,12 @@
 from typing import List
 
+# Better comments
+## note
+#* highlight
+# question:...
+# bug:...
+#// strikethrough
+
 # hash table one-pass approach - O(n) time
 def two_sum(nums: List[int], target: int) -> List[int]:
     d = {} # val : idx in nums

@@ -98,6 +98,14 @@ for i, j in zip(range(left, right), range(right, left, -1)):
     print(f'i: {i} | j: {j} ')
 ```
 
+### Looping Through Multiple Lists with zip()
+```python
+name = ['Pete', 'John', 'Elizabeth']
+age = [6, 23, 44]
+for n, a in zip(name, age):
+    print('{} is {} years old'.format(n, a))
+```
+
 ### Compare Two Unordered Lists
 ```python
 a = [1, 2, 3, 1, 2, 3]

@@ -10,12 +10,13 @@ An odyssey of math, stats, ds, and programming.
 * [R DNA (data table & ggplot2)](./tips/r_dna_basic.md)
 * [Algo master portal](./algo/README.md)
 
-## Other Resr
+## Other Resources
 * [All DS cheat sheets repo](https://github.com/FavioVazquez/ds-cheatsheets)
 * [statthinking21 from Stanford](https://statsthinking21.org/)
+* [Linear algebra reference - Interactive Linear Algebra](https://textbooks.math.gatech.edu/ila/index.html)
 
 ## Checklist
-- [ ] Python (technical + pd & np)
+- [ ] [Python](https://www.pythoncheatsheet.org/) (technical + pd & np)
     * technical: array & string, linked list, stack & queue, tree & graph, sorting & searching, recusion & DP ... These are enough for now
     * data manipulation: get comfortable with pandas and numpy (e.g. how to choose all rows that contain a null value for any column, inter-quantile range from a list, etc...) and some easy questions on Leetcode on Lists, Strings, Matrix and Math.
 - [ ] SQL
