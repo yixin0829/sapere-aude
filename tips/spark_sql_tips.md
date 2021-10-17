@@ -79,3 +79,13 @@ WHERE cte1.a = cte2.c;
 ```
 
 Notice everything is done in ONE statement.
+
+## LAG() & LEAD()
+* [MySQL tutorial documentation](https://www.mysqltutorial.org/mysql-window-functions/mysql-lead-function/)
+* Syntax
+```sql
+LEAD(<expression>[,offset[, default_value]]) OVER (
+    PARTITION BY (expr)
+    ORDER BY (expr)
+)
+```
