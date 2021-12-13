@@ -13,8 +13,18 @@ np.random.uniform(low=0.0, high=1.0, size=None) # uniform distr
 
 `flatten()` creates a new copy while `.ravel()` creates a "view" and is memory efficient.
 
+
 ## pandas
 See more detailed **comparison with sql** in [here](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html).
+
+### Exploring the data
+* `df.describe()`: sumamry statistics of columns
+* `df[col_list]`: select column(s) of interest
+* `df.info()`/`df.dtypes`: summary of the Dataframe (data types)
+* `df.shape`: tuple in format of (rows, cols)
+* `Series.value_counts(normalize=False, sort=True, ascending=False, bins=None, dropna=True)`
+    * Return a Series containing counts of unique values.
+    * `nomalized=True` will return relative frequency (percentage)
 
 ### Joining
 * joining two tables with different column names with `pd.merge()`
@@ -29,9 +39,18 @@ mrg_df = df1.merge(df2, left_on='lkey', right_on='rkey', copy=True)
 df_caller = df_caller.join(df_other.set_index(<keys>), on=<keys>, how={'left', 'right', 'inner', 'outer'}, lsuffix='_l', rsuffix='_r')
 ```
 
+* joining data frames with  `df1.merge(df2, join_field, join_type)`
+    * join_field: `on='field'` (fields are equal), `left_on='field_1'`, `right_on='field_2'` (join on different fields)
+    * join_type: `how='inner'/'left'/'right'/'outer'`
+
 ### Column Manipulation
 * renaming columns
     * `df.columns = ['col1', 'col2', 'col3']`
+```python
+df.rename(columns={
+    'current_col': 'new_col_name'
+})
+```
 * switching columns
 
 ### Filtering
@@ -49,3 +68,7 @@ WHERE col1 IS [NOT] NULL;
 ```
 
 ### Selection
+
+## Plotting
+* x label rotation: `plt.xticks(rotation=45)`
+* Always use `plt.show()` at the end to show plots

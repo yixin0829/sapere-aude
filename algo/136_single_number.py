@@ -8,6 +8,10 @@ from collections import deque, Counter
 import numpy as np
 import pandas as pd
 
+# Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+# You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+# example: nums = [2, 2, 1] ----> output: 1
 
 # example: [1, 2, 3, 1, 3] -> [1, 1, 2, 3, 3]
 # O(1) space constraint
