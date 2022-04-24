@@ -52,13 +52,20 @@ where
 * data size less than 200GB, use Partition!
 * partition accelerate data locating to benefit query performance
 * choose right partition column: low [cardinality](https://stackoverflow.com/questions/10621077/what-is-cardinality-in-databases) (a few unique categories) & frequent used in filter condition (WHERE)
+* 1 or 2 column is good recommendation. Don't use too much
 ```sql
+-- create table schema
 create table sales (
     prod_id int,
     user_id int,
     dt date,
     site int
 ) partitioned by (dt, site);
+
+-- create actual table
+create table sales using parquet partitioned by (dt, site) as (
+    select * from temp_tabel where ...
+);
 ```
 
 ### Table Layout - Bucket
@@ -108,7 +115,7 @@ CREATE TABLE Items (
 * [Some good read about SQL interview (crash read)](https://towardsdatascience.com/sql-questions-summary-df90bfe4c9c)
 
 ## Window Functions
-* check out [this MySQLTutorial article](https://www.mysqltutorial.org/mysql-window-functions/)
+* check out [this SQLTutorial article](https://learnsql.com/blog/define-window-frame-sql-window-functions/) that covers all topics of window functions like defining a frame, ordering a frame, defining a bound using `ROWS` and `RANGE`
     * `DENSE_RANK()`: doesn't leave gap in between the ranking (e.g. 1,1,2,3,3,4,5...). check out [this article](https://www.mysqltutorial.org/mysql-window-functions/mysql-rank-function/)
     * `RANK()`: leaves gap in between the ranking (e.g. 1,1,3,4,4,6,7...)
     * `ROW_NUMBER()`: (e.g. 1,2,3,4...)

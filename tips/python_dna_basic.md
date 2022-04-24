@@ -72,3 +72,15 @@ WHERE col1 IS [NOT] NULL;
 ## Plotting
 * x label rotation: `plt.xticks(rotation=45)`
 * Always use `plt.show()` at the end to show plots
+
+### Correlation Heatmap
+* using `.set_xticklabels()` to rotate x-labels to avoid mis-alignment
+```py
+metrics = df.iloc[:, 6:-1]
+corr = metrics.corr().round(2)
+fig, ax = plt.subplots(figsize=(20, 12))
+g = sns.heatmap(ax=ax, data=corr, annot=True)
+g.set_xticklabels(g.get_xticklabels(), rotation=45, horizontalalignment='right')
+plt.show()
+fig.savefig("corr.png")
+```
